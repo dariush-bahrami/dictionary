@@ -36,7 +36,7 @@ args = parser.parse_args()
 with open('dictionary_configs.json') as config_file:
     config_data = json.load(config_file)
 
-database = WordDatabase(config_data["Database Name"])
+database = WordDatabase(config_data["database_name"])
 
 if not args.offline:
     # Creating LongmanDictionary Object

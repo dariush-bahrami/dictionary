@@ -12,15 +12,15 @@ def replace_chars(string: str, chars_table: dict) -> str:
 class LongmanDictionary:
     url = 'https://www.ldoceonline.com/dictionary/'
     emojis = [
-        '\m/_(>_<)_\m/',
-        '\m/ (>.<) \m/',
-        '\,,/(^_^)\,,/',
-        '\(^-^)/',
-        '( 0 _ 0 )',
-        'd[-_-]b',
-        '<(^_^)>',
-        '¯\(°_o)/¯',
-        '[¬º-°]¬',
+        r'\m/_(>_<)_\m/',
+        r'\m/ (>.<) \m/',
+        r'\,,/(^_^)\,,/',
+        r'\(^-^)/',
+        r'( 0 _ 0 )',
+        r'd[-_-]b',
+        r'<(^_^)>',
+        r'¯\(°_o)/¯',
+        r'[¬º-°]¬',
     ]
 
     def __init__(self, word):
@@ -130,7 +130,7 @@ class LongmanDictionary:
 
 
 def colored(fg_color, bold=False, underline=False, reversed_=False):
-    import os, sys
+    import os
 
     colors = {
         'BLACK': '\033[30m',
@@ -175,17 +175,17 @@ with open('dictionary_configs.json') as config_file:
     config_data = json.load(config_file)
 
 
-@colored(config_data["Definition Box Color"])
+@colored(config_data["definition_box_color"])
 def print_definitions(definition_box):
     print(definition_box)
 
 
-@colored(config_data["Collocation Box Color"])
+@colored(config_data["collocation_box_color"])
 def print_collocations(collocation_box):
     print(collocation_box)
 
 
-@colored(config_data["Etymology Box Color"])
+@colored(config_data["etymology_box_color"])
 def print_etymology(etymology_box):
     print(etymology_box)
 
